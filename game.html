@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit & Loss Challenge - Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profit & Loss Challenge</h1>
+    <p>You are starting a small business selling handmade crafts.</p>
+    <p>Choose your pricing strategy:</p>
+    <button onclick="chooseStrategy('high')">Set High Prices</button>
+    <button onclick="chooseStrategy('low')">Set Low Prices</button>
+
+    <div id="result"></div>
+
+    <script>
+        function chooseStrategy(strategy) {
+            let profit;
+            if (strategy === 'high') {
+                profit = 100; // Assume high prices lead to higher profit
+                document.getElementById('result').innerHTML = `
+                    <p>You chose to set high prices.</p>
+                    <p>Your profit: $${profit}!</p>
+                    <a href="results.html?profit=${profit}" style="text-decoration: none; padding: 10px; background-color: #4CAF50; color: white; border-radius: 5px;">See Results</a>
+                `;
+            } else {
+                profit = 50; // Assume low prices lead to lower profit
+                document.getElementById('result').innerHTML = `
+                    <p>You chose to set low prices.</p>
+                    <p>Your profit: $${profit}!</p>
+                    <a href="results.html?profit=${profit}" style="text-decoration: none; padding: 10px; background-color: #4CAF50; color: white; border-radius: 5px;">See Results</a>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
+
+

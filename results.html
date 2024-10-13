@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Results - Profit & Loss Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Results</h1>
+    <p id="resultText"></p>
+    <a href="index.html" style="font-size: 20px; text-decoration: none; padding: 10px; background-color: #4CAF50; color: white; border-radius: 5px;">Play Again</a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const profit = urlParams.get('profit');
+
+        let resultMessage;
+        if (profit > 70) {
+            resultMessage = `Great job! You made a profit of $${profit}. Keep it up!`;
+        } else {
+            resultMessage = `You made a profit of $${profit}. Consider adjusting your strategy to increase your profits!`;
+        }
+
+        document.getElementById('resultText').innerText = resultMessage;
+    </script>
+</body>
+</html>
+
+
